@@ -1,18 +1,36 @@
 import React, { Component } from 'react'
 
 export default class General extends Component {
-  constructor() {
-    super();
-    this.renderSection = this.renderSection.bind(this)
+  constructor(props) {
+    super(props);
+    this.state = ({
+      name: '',
+      email: '',
+      phone: ''
+    })
+
+    
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderSection = this.renderSection.bind(this);
   }
 
   renderSection() {
-    console.log('test')
+    console.log(this.state)
   }
+  //prevents form from submitting and refreshing.
   handleSubmit(e) {
     e.preventDefault();
   }
-  
+
+  handleNameChange = (e) => {
+    this.setState({name: e.target.value})
+  }
+  handleEmailChange = (e) => {
+    this.setState({email: e.target.value})
+  }
+  handlePhoneChange = (e) => {
+    this.setState({phone: e.target.value})
+  }
 
 
   render() {
@@ -20,11 +38,11 @@ export default class General extends Component {
       <div>
         <form onSubmit={this.handleSubmit} className='General'>
             <label htmlFor='name'>Name:</label>
-            <input type="text"></input>
+            <input type="text" onChange={this.handleNameChange}></input>
             <label htmlFor='email'>Email:</label>
-            <input type="email"></input>
+            <input type="email" onChange={this.handleEmailChange}></input>
             <label htmlFor='phone'>Phone:</label>
-            <input type="number"></input>
+            <input type="number" onChange={this.handlePhoneChange}></input>
             <button onClick={this.renderSection}>ADD</button>
         </form>
       </div>
