@@ -18,7 +18,6 @@ export default class General extends Component {
 
   renderSection() {
     this.toggleEdit()
-    console.log(this.state)
   }
   //prevents form from submitting and refreshing.
   handleSubmit(e) {
