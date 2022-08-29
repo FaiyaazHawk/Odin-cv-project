@@ -12,12 +12,7 @@ export default class General extends Component {
 
     
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderSection = this.renderSection.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
-  }
-
-  renderSection() {
-    this.toggleEdit()
   }
   //prevents form from submitting and refreshing.
   handleSubmit(e) {
@@ -59,7 +54,7 @@ export default class General extends Component {
 
 
 
-          <button onClick={this.renderSection}>Toggle Edit</button>
+          <button onClick={this.toggleEdit}>Toggle Edit</button>
       </div>
     )
   }

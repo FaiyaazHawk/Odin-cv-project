@@ -48,9 +48,11 @@ export default class Education extends Component {
           <label htmlFor='graduationyear'>Year Graduated:</label>
           <input type="date" onChange={this.handleGraduationYearChange}></input>
         </form>
+
         {!this.state.edit && <h2>School Name: {this.state.schoolname}</h2>}
         {!this.state.edit && <h2>Study Title: {this.state.studytitle}</h2>}
         {!this.state.edit && <h2>Grad date: {this.state.graduationyear}</h2>}
+        
         <button type='submit' onClick={this.toggleEdit}>Toggle Edit</button>
       </div>
     )
