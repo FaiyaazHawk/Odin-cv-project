@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../styles/Section.css'
 
 export default class General extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ export default class General extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         
         <form style={{display: this.state.edit? "block":"none"}} onSubmit={this.handleSubmit} className='General'>
             <label htmlFor='name'>Name:</label>

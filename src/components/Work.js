@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../styles/Section.css'
 
 export default class Work extends Component {
   constructor(props) {
@@ -45,7 +46,7 @@ export default class Work extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <form style={{display: this.state.edit? "block":"none"}} onSubmit={this.handleSubmit}>
             <label htmlFor='companyname'>Name of Company</label>
             <input type="text" onChange={this.handleCompanyNameChange}></input>

@@ -4,6 +4,7 @@ import Education from './Education'
 import Work from './Work'
 
 export default class Body extends Component {
+  
   render() {
     return (
       <div>

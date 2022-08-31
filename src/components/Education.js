@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../styles/Section.css'
 
 export default class Education extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ export default class Education extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <form style={{display: this.state.edit? "block":"none"}} onSubmit={this.handleSubmit} >
           <label htmlFor='schoolname'>School Name:</label>
           <input type="text" onChange={this.handleSchoolNameChange}></input>
