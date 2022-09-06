@@ -1,7 +1,54 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import '../styles/Section.css'
 
-export default class General extends Component {
+function General () {
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [edit, setEdit] = useState(true)
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
+  const toggleEdit = ()  => {
+    edit? setEdit(false) : setEdit (true)
+  }
+  ///handlers
+  const handleNameChange = (e) => {
+    setName(e.target.value)
+  }
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value)
+  }
+  
+  return (
+    <div className='container'>
+        <form style={{display: edit? "block":"none"}} onSubmit={handleSubmit} className='general'>
+            <label htmlFor='name'>Name:</label>
+            <input type="text" onChange={handleNameChange}></input>
+            
+            <label htmlFor='email'>Email:</label>
+            <input type="email" onChange={handleEmailChange}></input>
+            
+            <label htmlFor='phone'>Phone:</label>
+            <input type="number" onChange={handlePhoneChange}></input>
+        </form>
+        {!edit && <h2>Name: {name}</h2>}
+        {!edit && <h2>Email: {email}</h2>}
+        {!edit && <h2>Phone: {phone}</h2>}
+
+        <button onClick={toggleEdit}>Toggle Edit</button>
+    </div>
+  )
+}
+
+export default General
+
+/* export default class General extends Component {
   constructor(props) {
     super(props);
     this.state = ({
@@ -60,3 +107,4 @@ export default class General extends Component {
     )
   }
 }
+ */
