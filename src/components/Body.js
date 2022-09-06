@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import General from './General'
 import Education from './Education'
 import Work from './Work'
 
-export default class Body extends Component {
-  
-  render() {
+function Body () {
     return (
       <div>
         <General></General>
@@ -14,4 +12,5 @@ export default class Body extends Component {
       </div>
     )
   }
-}
+
+export default Body
